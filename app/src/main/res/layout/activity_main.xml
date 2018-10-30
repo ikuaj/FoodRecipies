@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OurRecipies"
+        android:layout_marginTop="35dp"
+        android:id="@+id/textView"
+        android:textSize="40sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="78dp"
+        android:layout_marginRight="78dp"
+        android:scaleType="centerCrop" />
+
+    <EditText
+        android:id="@+id/foodEditText"
+        android:layout_width="217dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-161dp"
+        android:layout_marginRight="-161dp"
+        android:layout_toLeftOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/findFoodbutton"
+        android:layout_width="119dp"
+        android:layout_height="45dp"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="-5dp"
+        android:text="Search" />
+
+</RelativeLayout>
