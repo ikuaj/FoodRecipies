@@ -7,12 +7,13 @@
     tools:context=".SearchActivity">
 
     <TextView
+        android:id="@+id/foodTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Food recipie "
-        android:id="@+id/foodTextView"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:text="Food recipie " />
 
     <ListView
         android:layout_width="match_parent"

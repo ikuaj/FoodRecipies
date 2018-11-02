@@ -10,9 +10,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class SearchActivity extends AppCompatActivity {
-    private TextView mfoodTextView;
-    private ListView mListView;
+    @BindView(R.id.foodTextView) TextView mfoodTextView;
+    @BindView(R.id.listView) ListView mListView;
+
     private String[] food = new String[] {"Mi Mero Mole", "Mother's Bistro",
                 "Life of Pie", "Screen Door", "Luc Lac", "Sweet Basil",
                 "Slappy Cakes", "Equinox", "Miss Delta's", "Andina",
@@ -23,9 +27,10 @@ public class SearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+        ButterKnife.bind(this);
 
-        mListView = (ListView) findViewById(R.id.listView);
-        mfoodTextView = (TextView) findViewById(R.id.foodTextView);
+//        mListView = (ListView) findViewById(R.id.listView);
+//        mfoodTextView = (TextView) findViewById(R.id.foodTextView);
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, food);
         mListView.setAdapter(adapter);
