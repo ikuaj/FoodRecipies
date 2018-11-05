@@ -29,7 +29,7 @@ public class SearchActivity extends AppCompatActivity {
 //        mListView = (ListView) findViewById(R.id.listView);
 //        mfoodTextView = (TextView) findViewById(R.id.foodTextView);
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, foods);
+        MyRecipiesArrayAdapter adapter = new MyRecipiesArrayAdapter(this, android.R.layout.simple_list_item_1, foods, cuisines);
         mListView.setAdapter(adapter);
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

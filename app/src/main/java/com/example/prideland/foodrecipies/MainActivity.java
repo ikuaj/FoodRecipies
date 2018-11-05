@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
         Typeface mali = Typeface.createFromAsset(getAssets(), "fonts/GrandHotel-Regular.otf");
         mtitleTextView.setTypeface(mali);
 
-//        mfoodEditText = (EditText) findViewById(R.id.foodEditText);
-//        mfindFoodButton = (Button) findViewById(R.id.findFoodbutton);
+        mfoodEditText = (EditText) findViewById(R.id.foodEditText);
+        mfindFoodButton = (Button) findViewById(R.id.findFoodbutton);
         mfindFoodButton.setOnClickListener(new View.OnClickListener() {
             @Override
                 public void onClick(View v) {
