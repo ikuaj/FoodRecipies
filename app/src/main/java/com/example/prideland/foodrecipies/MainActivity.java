@@ -12,7 +12,7 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     @BindView(R.id.findFoodbutton) Button mfindFoodButton;
     @BindView(R.id.foodEditText) EditText mfoodEditText;
     @BindView(R.id.titleTextView) TextView mtitleTextView;
@@ -26,16 +26,16 @@ public class MainActivity extends AppCompatActivity {
         Typeface mali = Typeface.createFromAsset(getAssets(), "fonts/GrandHotel-Regular.otf");
         mtitleTextView.setTypeface(mali);
 
-        mfoodEditText = (EditText) findViewById(R.id.foodEditText);
-        mfindFoodButton = (Button) findViewById(R.id.findFoodbutton);
-        mfindFoodButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-                public void onClick(View v) {
-                String food = mfoodEditText.getText().toString();
-                Intent intent = new Intent(MainActivity.this, SearchActivity.class);
-                intent.putExtra("food", food);
-                startActivity(intent);
-            }
-        });
+//        mfoodEditText = (EditText) findViewById(R.id.foodEditText);
+//        mfindFoodButton = (Button) findViewById(R.id.findFoodbutton);
+        mfindFoodButton.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        String food = mfoodEditText.getText().toString();
+        Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+        intent.putExtra("food", food);
+        startActivity(intent);
     }
 }
