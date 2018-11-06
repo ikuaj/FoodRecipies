@@ -33,9 +33,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        String food = mfoodEditText.getText().toString();
-        Intent intent = new Intent(MainActivity.this, SearchActivity.class);
-        intent.putExtra("food", food);
-        startActivity(intent);
+        if (v == mfindFoodButton) {
+            String food = mfoodEditText.getText().toString();
+            Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+            intent.putExtra("food", food);
+            startActivity(intent);
+        }
     }
 }
