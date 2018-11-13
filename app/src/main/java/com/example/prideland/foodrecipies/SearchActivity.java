@@ -3,20 +3,35 @@ package com.example.prideland.foodrecipies;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.prideland.foodrecipies.Services.Food;
+import com.example.prideland.foodrecipies.adapter.MyRecipiesArrayAdapter;
+import com.example.prideland.foodrecipies.models.Recipies;
+
+import org.json.JSONException;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import okhttp3.Callback;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import okhttp3.Call;
+import okhttp3.Response;
 
 public class SearchActivity extends AppCompatActivity {
     @BindView(R.id.foodTextView) TextView mfoodTextView;
     @BindView(R.id.listView) ListView mListView;
 
+    public ArrayList<Recipies> recipies = new ArrayList<>();
     private String[] foods = new String[] {"Sweet Hereafter", "Cricket", "Hawthorne Fish House", "Viking Soul Food", "Red Square", "Horse Brass", "Dick's Kitchen", "Taco Bell", "Me Kha Noodle Bar", "La Bonita Taqueria", "Smokehouse Tavern", "Pembiche", "Kay's Bar", "Gnarly Grey", "Slappy Cakes", "Mi Mero Mole" };
     private String[] cuisines = new String[] {"Vegan Food", "Breakfast", "Fishs Dishs", "Scandinavian", "Coffee", "English Food", "Burgers", "Fast Food", "Noodle Soups", "Mexican", "BBQ", "Cuban", "Bar Food", "Sports Bar", "Breakfast", "Mexican" };
 
@@ -44,4 +59,26 @@ public class SearchActivity extends AppCompatActivity {
         String food = intent.getStringExtra("food");
         mfoodTextView.setText("Here is the recipie of your: " + food);
     }
+
+    private void getRecipies(String recipi) {
+        Food.getFood(recipi, new Callback() {
+
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+            }
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                try {
+                    String jsonData = response.body().string();
+                    if (response.isSuccessful()) {
+                        Log.v("TAG", jsonData);
+                        recipies = Food.ProcessResults(response);
+                    }
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+        }
+    });
+}
 }

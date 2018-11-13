@@ -1,4 +1,4 @@
-package com.example.prideland.foodrecipies;
+package com.example.prideland.foodrecipies.adapter;
 
 import android.content.Context;
 import android.widget.ArrayAdapter;
