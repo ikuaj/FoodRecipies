@@ -48,7 +48,7 @@ public class Recipies {
      * @param publisherUrl
      * @param publisher
      */
-    public Recipies(String publisher, String f2fUrl, String title, String sourceUrl, String recipeId, String imageUrl, Double socialRank, String publisherUrl) {
+    public Recipies(String publisher,String f2fUrl, String title, String sourceUrl, String recipeId, String imageUrl, Double socialRank, String publisherUrl) {
         super();
         this.publisher = publisher;
         this.f2fUrl = f2fUrl;

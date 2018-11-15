@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if (v == mfindFoodButton) {
             String food = mfoodEditText.getText().toString();
-
             Food.getFood(food, new Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {

@@ -2,13 +2,18 @@ package com.example.prideland.foodrecipies.Services;
 
 import com.example.prideland.foodrecipies.Constants;
 import com.example.prideland.foodrecipies.models.Recipies;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.List;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -34,21 +39,19 @@ public class Food {
         call.enqueue(callback);
     }
 
-    public  static ArrayList<Recipies> ProcessResults(Response response) throws IOException,JSONException {
+    public  static ArrayList<Recipies> processResults(Response response) {
         ArrayList<Recipies> recipies = new ArrayList<>();
 
         try {
             String jsonData = response.body().string();
+            if(response.isSuccessful()){
             JSONObject food2forkJSon = new JSONObject(jsonData);
-            JSONArray businessJSon = food2forkJSon.getJSONArray("business");
-            for (int i = 0; i < businessJSon.length(); i++) {
-                JSONObject recipiesJSON = businessJSon.getJSONObject(i);
-                String title = recipiesJSON.getString("title");
-                String website = food2forkJSon.getString("url");
-                double socialrank = recipiesJSON.getDouble("socialRanks");
-
-                String imageUrl = food2forkJSon.getString("image_url");
+            JSONArray recipiesJson = food2forkJSon.getJSONArray("recipes");
+            Type type = new TypeToken<List<Recipies>>() {}.getType();
+            Gson gson = new GsonBuilder().create();
+            recipies = gson.fromJson(recipiesJson.toString(), type);
             }
+
         }
         catch (IOException e){
             e.printStackTrace();
