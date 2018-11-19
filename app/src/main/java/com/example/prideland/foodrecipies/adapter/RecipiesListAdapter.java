@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.example.prideland.foodrecipies.R;
 import com.example.prideland.foodrecipies.SearchActivity;
 import com.example.prideland.foodrecipies.models.Recipies;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -61,6 +62,7 @@ public class RecipiesListAdapter extends RecyclerView.Adapter<RecipiesListAdapte
         }
 
         public void bindRecipies(Recipies recipies) {
+            Picasso.get().load(recipies.getImageUrl()).into(mfoodImageView);
             mfoodNameTextView.setText(recipies.getTitle());
             mcategoryTextView.setText(recipies.getPublisher());
             mratingTextView.setText("Rating: " + recipies.getSocialRank() + "/5");

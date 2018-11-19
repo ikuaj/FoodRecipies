@@ -1,6 +1,8 @@
 package com.example.prideland.foodrecipies;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -29,6 +31,9 @@ import okhttp3.Call;
 import okhttp3.Response;
 
 public class SearchActivity extends AppCompatActivity {
+    private SharedPreferences mSharedPreferences;
+    private String mRecentFood;
+
     public static final String TAG = SearchActivity.class.getSimpleName();
 
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
@@ -46,6 +51,12 @@ public class SearchActivity extends AppCompatActivity {
         String food = intent.getStringExtra("food");
 
         getRecipie(food);
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mRecentFood = mSharedPreferences.getString(Constants.PREFERENCES_FOOD_KEY, null);
+        if (mRecentFood != null) {
+            getRecipie(mRecentFood);
+        }
 
     }
 
