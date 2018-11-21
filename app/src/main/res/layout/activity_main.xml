@@ -31,6 +31,8 @@
         <!--android:layout_marginRight="78dp"-->
         <!--android:scaleType="centerCrop" />-->
 
+
+
     <EditText
         android:id="@+id/foodEditText"
         android:layout_width="217dp"
