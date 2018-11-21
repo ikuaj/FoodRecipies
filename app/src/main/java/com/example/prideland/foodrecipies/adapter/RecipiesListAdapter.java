@@ -1,8 +1,6 @@
 package com.example.prideland.foodrecipies.adapter;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.prideland.foodrecipies.R;
-import com.example.prideland.foodrecipies.SearchActivity;
 import com.example.prideland.foodrecipies.models.Recipies;
 import com.squareup.picasso.Picasso;
 
