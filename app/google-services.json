@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "79798607669",
+    "firebase_url": "https://food-recipie-c95d0.firebaseio.com",
+    "project_id": "food-recipie-c95d0",
+    "storage_bucket": "food-recipie-c95d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79798607669:android:5eedf70e17790943",
+        "android_client_info": {
+          "package_name": "com.example.prideland.foodrecipies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "79798607669-d58kobgjetk8kcivo31o6n7ie35ckc8v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3XHCWOWiZXowdtFDzsFwthmD3SXZDyk8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
