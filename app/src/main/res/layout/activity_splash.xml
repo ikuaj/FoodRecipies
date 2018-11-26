@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/food"
+    tools:context=".SplashActivity">
+
+    <LinearLayout
+        android:id="@+id/uptodown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/appnamesplashtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100sp"
+            android:text="Ribba"
+            android:textSize="50sp"
+            android:textColor="@color/colorAccent"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/downtoup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:src="@drawable/foodbg"
+            android:layout_gravity="center" />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
