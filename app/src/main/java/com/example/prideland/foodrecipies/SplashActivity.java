@@ -18,11 +18,14 @@ import butterknife.ButterKnife;
 
 public class SplashActivity extends AppCompatActivity {
 
-    Animation uptodown,downtoup;
+    Animation uptodown, downtoup;
 
-    @BindView(R.id.appnamesplashtext) TextView mAppnamesplashtext;
-    @BindView(R.id.uptodown) LinearLayout mUptodown;
-    @BindView(R.id.downtoup) LinearLayout mDowntoup;
+    @BindView(R.id.appnamesplashtext)
+    TextView mAppnamesplashtext;
+    @BindView(R.id.uptodown)
+    LinearLayout mUptodown;
+    @BindView(R.id.downtoup)
+    LinearLayout mDowntoup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +34,10 @@ public class SplashActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
-        uptodown = AnimationUtils.loadAnimation(this,R.anim.uptodown);
+        uptodown = AnimationUtils.loadAnimation(this, R.anim.uptodown);
         downtoup = AnimationUtils.loadAnimation(this, R.anim.downtoup);
         mUptodown.setAnimation(uptodown);
         mDowntoup.setAnimation(downtoup);
-
-
 
 
 //        Typeface righteousFonts = Typeface.createFromAsset(getAssets(), "fonts/Righteous/Righteous-Regular.ttf");
@@ -50,9 +51,7 @@ public class SplashActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        },4000);
+        }, 4000);
 
     }
-
-
 }
